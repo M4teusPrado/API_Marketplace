@@ -1,4 +1,5 @@
-package com.marketplace.marketplaceapi.model;
+package marketplaceapi.model;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

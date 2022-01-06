@@ -1,4 +1,6 @@
- package com.marketplace.marketplaceapi;
+package marketplaceapi;
+
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

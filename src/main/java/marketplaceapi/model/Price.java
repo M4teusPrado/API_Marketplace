@@ -1,5 +1,4 @@
-package com.marketplace.marketplaceapi.model;
-
+package marketplaceapi.model;
 import lombok.Data;
 
 @Data
