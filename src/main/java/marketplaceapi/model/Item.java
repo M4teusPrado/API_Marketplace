@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
+@Table(name = "ITEMS")
 public class Item implements Serializable {
 
     
@@ -36,14 +38,14 @@ public class Item implements Serializable {
     private int availableQuantity;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "price_id", referencedColumnName = "id")
-    private Price price;
+    // @OneToOne(cascade = CascadeType.ALL)
+    // @JoinColumn(name = "price_id", referencedColumnName = "id")
+    // private Price price;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "dimension_id", referencedColumnName = "id")
-    private Dimension dimension;
+    // @OneToOne(cascade = CascadeType.ALL)
+    // @JoinColumn(name = "dimension_id", referencedColumnName = "id")
+    // private Dimension dimension;
 
     private Double weight;
     private Boolean active;
