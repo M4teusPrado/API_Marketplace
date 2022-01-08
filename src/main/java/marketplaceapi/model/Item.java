@@ -37,6 +37,8 @@ public class Item implements Serializable {
     private String ean;
     private int availableQuantity;
 
+    //
+
 
     // @OneToOne(cascade = CascadeType.ALL)
     // @JoinColumn(name = "price_id", referencedColumnName = "id")
