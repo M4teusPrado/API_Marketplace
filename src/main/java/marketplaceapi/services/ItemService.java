@@ -1,5 +1,7 @@
 package marketplaceapi.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +14,8 @@ public class ItemService {
     @Autowired
     private Itemrepository itemrepository;
 
-    public Item getAdminById(Long id) {
-        return itemrepository.findById(id).get();
+    public List<Item> getItens() {
+        return itemrepository.findAll();
     }
     
 }
