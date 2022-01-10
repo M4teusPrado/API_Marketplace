@@ -1,4 +1,4 @@
-package marketplaceapi.model;
+package marketplaceapi.models;
 
 import java.io.Serializable;
 
