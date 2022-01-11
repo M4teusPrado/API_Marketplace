@@ -8,5 +8,5 @@ import marketplaceapi.models.Item;
 @Repository
 public interface Itemrepository  extends JpaRepository<Item, Long>{
     
-    
+    //
 }
