@@ -29,7 +29,6 @@ public class ItemService {
         }
     }
 
-
     public void deleteItem(Long id) {
         itemrepository.delete(getItemById(id));
     }
