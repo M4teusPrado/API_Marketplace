@@ -28,4 +28,9 @@ public class ItemService {
             throw new ResponseStatusException( HttpStatus.NOT_FOUND, "Item não encontrado");
         }
     }
+
+
+    public void deleteItem(Long id) {
+        itemrepository.delete(getItemById(id));
+    }
 }
