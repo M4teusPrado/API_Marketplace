@@ -35,7 +35,7 @@ public class ItemService {
     }
 
 
-    public void updateItem(Long id, ItemDTO itemDTO) {=
+    public void updateItem(Long id, ItemDTO itemDTO) {
         try {
             Item item = itemrepository.findById(id).get();
             ItemDTOtoItem(item, itemDTO);
