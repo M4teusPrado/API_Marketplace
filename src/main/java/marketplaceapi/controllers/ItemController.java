@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import marketplaceapi.DTOS.ItemDTO;
 import marketplaceapi.models.Item;
 import marketplaceapi.services.ItemService;
 
@@ -40,8 +41,8 @@ public class ItemController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody Item item) {
-        itemService.updateItem(id, item);
+    public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody ItemDTO itemDTO) {
+        itemService.updateItem(id, itemDTO);
         return null;
     }    
 }

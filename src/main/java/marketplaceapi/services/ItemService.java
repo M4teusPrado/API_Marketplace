@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import marketplaceapi.DTOS.ItemDTO;
 import marketplaceapi.models.Item;
 import marketplaceapi.repositories.Itemrepository;
 
@@ -34,13 +35,25 @@ public class ItemService {
     }
 
 
-    public void updateItem(Long id, Item item) {
+    public void updateItem(Long id, ItemDTO itemDTO) {
 
-        Item itemOld = getItemById(id);
+        try {
+            Item item = itemrepository.findById(id).get();
+            ItemDTOtoItem(item, itemDTO);
+            item = itemrepository.save(item);
+            
 
+        } catch (Exception e) {
+            throw new ResponseStatusException( HttpStatus.NOT_FOUND, "Item não encontrado");
+        }
         
-        item = itemrepository.save(item);
-        
+    }
+
+
+    private void ItemDTOtoItem(Item item, ItemDTO itemDTO) {
+        item.setBrand(itemDTO.getBrand());
+        item.setDescription(itemDTO.getDescription());
+        item.setTitle(itemDTO.getTitle());
     }
 
     
