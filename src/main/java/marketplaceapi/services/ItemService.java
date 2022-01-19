@@ -20,7 +20,6 @@ public class ItemService {
     public List<Item> getItens() {
         return itemrepository.findAll();
     }
-
    
     public Item getItemById(Long id) {
         try {
@@ -35,11 +34,12 @@ public class ItemService {
     }
 
 
-    public void updateItem(Long id, ItemDTO itemDTO) {
+    public ItemDTO updateItem(Long id, ItemDTO itemDTO) {
         try {
             Item item = itemrepository.findById(id).get();
             ItemDTOtoItem(item, itemDTO);
             item = itemrepository.save(item);
+            return new ItemDTO(item);
         } catch (Exception e) {
             throw new ResponseStatusException( HttpStatus.NOT_FOUND, "Item não encontrado");
         }

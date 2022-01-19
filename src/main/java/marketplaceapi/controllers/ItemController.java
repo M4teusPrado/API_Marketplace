@@ -41,8 +41,8 @@ public class ItemController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody ItemDTO itemDTO) {
-        itemService.updateItem(id, itemDTO);
-        return null;
+    public ResponseEntity<ItemDTO> updateItem(@PathVariable Long id, @RequestBody ItemDTO itemDTO) {
+        ItemDTO dto = itemService.updateItem(id, itemDTO);
+        return ResponseEntity.ok().body(dto);
     }    
 }
