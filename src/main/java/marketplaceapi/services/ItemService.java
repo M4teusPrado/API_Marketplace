@@ -35,18 +35,14 @@ public class ItemService {
     }
 
 
-    public void updateItem(Long id, ItemDTO itemDTO) {
-
+    public void updateItem(Long id, ItemDTO itemDTO) {=
         try {
             Item item = itemrepository.findById(id).get();
             ItemDTOtoItem(item, itemDTO);
             item = itemrepository.save(item);
-            
-
         } catch (Exception e) {
             throw new ResponseStatusException( HttpStatus.NOT_FOUND, "Item não encontrado");
         }
-        
     }
 
 
