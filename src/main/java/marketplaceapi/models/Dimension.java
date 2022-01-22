@@ -23,4 +23,5 @@ public class Dimension implements Serializable {
     private double width;
     private double height;
 
+    
 }
